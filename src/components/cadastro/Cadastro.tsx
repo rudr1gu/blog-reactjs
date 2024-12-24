@@ -1,6 +1,7 @@
 import './Cadastro.css'
 import Usuario from './User'
 
+
 function Cadastro(){
     const user1: Usuario = new Usuario(1,'Rodrigo', 'rodrigo@email.com', 'Senha123');
     const user2: Usuario = new Usuario(2,'João', 'jao@email.com', 'Senha123');
