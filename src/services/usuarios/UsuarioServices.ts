@@ -10,7 +10,7 @@ class UsuarioServices {
     }
 
     async postUsuario(usuario: Usuario) {
-        await api.post('/usuarios', usuario)
+        await api.post('/usuarios/cadastrar', usuario)
     }
 }
 
