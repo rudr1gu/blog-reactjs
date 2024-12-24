@@ -12,6 +12,16 @@ class UsuarioServices {
     async postUsuario(usuario: Usuario) {
         await api.post('/usuarios/cadastrar', usuario)
     }
+
+    async logarUsuario(usuario: string, senha: string) {
+        const response = await api.post('/usuarios/logar', { usuario, senha });
+        const { token } = response.data;
+
+        if (token) {
+            localStorage.setItem('token', token);
+            api.defaults.headers.common['Authorization'] = token;
+        }
+    }
 }
 
 export default UsuarioServices;
