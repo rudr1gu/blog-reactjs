@@ -1,12 +1,15 @@
 import './Cadastro.css'
-import Usuario from './User'
-
+import UsuarioServices from '../../services/usuarios/UsuarioServices'
+import { useEffect } from 'react'
 
 function Cadastro(){
-    const user1: Usuario = new Usuario(1,'Rodrigo', 'rodrigo@email.com', 'Senha123');
-    const user2: Usuario = new Usuario(2,'João', 'jao@email.com', 'Senha123');
-    const users = [user1, user2]
 
+    const usuarioServices = new UsuarioServices()
+
+    useEffect(() => {
+        usuarioServices.getUsuarios()
+    }, [])
+   
     return (
         <section className="cadastro">
             <h1 className='titulo-cadastro'>Cadastro de Usuario</h1>
@@ -17,7 +20,7 @@ function Cadastro(){
                 <button type='button' className='form'>Cadastrar</button>
             </form>
 
-        { users.map((user) => (
+        { usuarioServices.user.map((user) => (
             <article key={user.id}>
             <h2>Usuarios Cadastrados</h2>
             <ul>
