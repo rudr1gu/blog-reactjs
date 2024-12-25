@@ -1,0 +1,45 @@
+.post-card {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .post-header p {
+    font-size: 0.9rem;
+    color: #999;
+    margin: 0 0 10px;
+  }
+  
+  .post-header h3 {
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+    font-weight: bold;
+  }
+  
+  .post-body p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .post-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .post-footer .subtitle {
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
