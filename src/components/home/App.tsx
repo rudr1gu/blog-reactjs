@@ -1,5 +1,6 @@
 import './App.css'
 import Navbar from './navbar/Navbar';
+import Footer from './footer/Footer';
 
 import { Outlet } from 'react-router-dom';
 
@@ -11,7 +12,7 @@ function App() {
       </header>
       <Outlet />
       <footer>
-        <p>Desenvolvido por: <a href='https://github.com/rudr1gu'>Rudrigu</a></p>
+        <Footer />
       </footer>
     </section>
   )
