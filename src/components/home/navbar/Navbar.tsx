@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 // importar bootstrap js    
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 
 function Navbar(){
@@ -10,6 +11,8 @@ function Navbar(){
         <nav className="navbar bg-body-tertiary fixed-top">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">Blog Pessoal - Generation</a>
+            <Link to="/cadastro"> Cadastrar</Link>
+            <Link to="/cadastro"> Login</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
