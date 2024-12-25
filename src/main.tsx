@@ -4,6 +4,7 @@ import './index.css'
 import App from './components/home/App.tsx'
 import Cadastro from './components/cadastro/Cadastro.tsx'
 import Login from './components/login/Login.tsx'
+import Postagens from './components/postagens/Postagens.tsx'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -18,8 +19,15 @@ const router = createBrowserRouter([
   },
   {
     path: '/',
-    element: <App />
+    element: <App />,
+    children: [
+      {
+        path: '/',
+        element: <Postagens />
+      }
+    ]
   }
+  
 ])
 
 
