@@ -21,7 +21,7 @@ function Postagens() {
             postagens.map((postagem) => (
                 <section className="post-card" key={postagem.id}>
                     <div className="post-header">
-                        <p><span>🕒</span> {new Date(postagem.data).toLocaleDateString()}</p>
+                        <p><span>🕒</span> {postagem.data ? new Date(postagem.data).toLocaleDateString(): "data indisponivel"}</p>
                         <h3>{postagem.titulo}</h3>
                     </div>
                     <div className="post-body">

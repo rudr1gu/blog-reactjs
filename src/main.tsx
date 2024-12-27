@@ -6,6 +6,7 @@ import Cadastro from './components/cadastro/Cadastro.tsx'
 import Login from './components/login/Login.tsx'
 import Postagens from './components/postagens/Postagens.tsx'
 import Postagem from './components/postagem/Postagem.tsx'
+import CadastrarPostagem from './components/postagemform/CadastrarPostagem.tsx'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/postagem/:id',
         element: <Postagem />
+      },
+      {
+        path: '/publicar',
+        element: <CadastrarPostagem />
       }
     ]
   }
