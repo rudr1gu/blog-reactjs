@@ -10,7 +10,9 @@ function App() {
       <header>
         <Navbar />
       </header>
-      <Outlet />
+      <section className='content'>
+        <Outlet />
+      </section>
       <footer>
         <Footer />
       </footer>

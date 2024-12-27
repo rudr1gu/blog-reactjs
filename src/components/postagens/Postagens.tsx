@@ -1,25 +1,46 @@
+import Postagem from '../../model/Postagem';
+import PostagemService from '../../services/usuarios/PostagemService';
 import './Postagens.css';
+import { useEffect, useState } from 'react';
 
 function Postagens() {
-    return (
-        <section className="post-card">
-            <div className="post-header">
-                <p><span>🕒</span> 5:00pm - 6:30pm</p>
-                <h3>Improving the quality of the management</h3>
-            </div>
-            <div className="post-body">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-            </div>
-            <div className="post-footer">
-                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Author Avatar" className="avatar" />
-                <div>
-                    <p><strong>Dr. Ariful Islam Abid</strong></p>
-                    <p className="subtitle">CEO of AIA software agency, USA</p>
-                </div>
-            </div>
-        </section>
+    const postagemService = new PostagemService();
+    
+    const [postagens, setPostagens] = useState<Postagem[]>([]);
+
+    useEffect(() => {
+        postagemService.listarPostagens().then((postagens) => {
+            setPostagens(postagens);
+        });
+    }, []);
+
+
+    return ( 
+    <div className='container'>
+        {
+            postagens.map((postagem) => (
+                <section className="post-card" key={postagem.id}>
+                    <div className="post-header">
+                        <p><span>🕒</span> {new Date(postagem.data).toLocaleDateString()}</p>
+                        <h3>{postagem.titulo}</h3>
+                    </div>
+                    <div className="post-body">
+                        <p>
+                            {postagem.texto}
+                        </p>
+                    </div>
+                    <div className="post-footer">
+                        <img src={postagem.usuario?.foto} alt="Author Avatar" className="avatar" />
+                        <div>
+                            <p><strong>{postagem.usuario?.nome}</strong></p>
+                            <p className="subtitle">{postagem.usuario?.usuario}</p>
+                        </div>
+                    </div>
+                </section>
+            ))
+        }
+        
+    </div>
     )
 }
 
